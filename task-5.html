@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+
+<body>
+    <h5>Enter length of fibonacci series:</h5>
+    <input type="number" id="number" name="number">
+    <button onclick="fibonacci()">Submit</button>
+    <h4 id="series"></h4>
+
+    <script>
+        function fibonacci() {
+            const len = parseInt(document.getElementById('number').value);
+
+            if (isNaN(len) || len <= 0) {
+                document.getElementById('series').innerHTML = "Please enter a valid positive number.";
+                return;
+            }
+
+            const fibonacci = [];
+            for (let i = 0; i < len; i++) {
+                if (i === 0) {
+                    fibonacci.push(0);
+                } else if (i === 1) {
+                    fibonacci.push(1);
+                } else {
+                    fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
+                }
+            }
+
+            document.getElementById('series').innerHTML = `Fibonacci Series: ${fibonacci.join(', ')}`;
+        }
+    </script>
+</body>
+
+</html>

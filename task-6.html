@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+
+<body>
+    <h5>Enter a number:</h5>
+    <input type="number" id="number" name="number">
+    <button onclick="factorial()">Submit</button>
+    <h2 id="fact"></h2>
+
+    <script>
+        function factorial() {
+            const num = parseInt(document.getElementById('number').value);
+
+            if (num === 0 || num === 1) {
+                document.getElementById('fact').innerHTML = "Factorial of the given number is 1";
+                return;
+            }
+
+            let fact = 1;
+            for (let i = 2; i <= num; i++) {
+                fact *= i;
+            }
+
+            document.getElementById('fact').innerHTML = `Fibonacci Series: ${fact}`;
+        }
+    </script>
+</body>
+
+</html>
